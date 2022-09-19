@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version     = PixarRubyExtensions::VERSION
   s.license     = 'Nonstandard'
   s.date        = Time.now.utc.strftime('%Y-%m-%d')
-  s.summary     = "Extensions to Ruby core and standard libraries used in Pixar's ruby projects"
+  s.summary     = "Extensions to Ruby Core and Ctandard libraries used in Pixar's ruby projects"
   s.description = <<~EOD
     This gem contans extensions to the Ruby core and standard libraries which have been used in many
     Pixar projects over the years.

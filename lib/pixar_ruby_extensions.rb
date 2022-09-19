@@ -19,8 +19,6 @@
 #    distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 #    KIND, either express or implied. See the Apache License for the specific
 #    language governing permissions and limitations under the Apache License.
-#
-#
 
 # These are extensions to Ruby modules and classes in Ruby's Core
 # and Standard Library. We've put them here because we've found
@@ -29,12 +27,12 @@
 # They are also used in our open-source projects, and their use there
 # will be migrating to use this gem, rather than their built-in
 # versions - also in pursuit of DRYness.
-#
+
 # To ease troubleshooting and prevent name collisions:
-#
+
 # - With only a couple of exceptions, all monkey-patched methods are
 #   prefixed with "pix_"
-#
+
 # - Methods are not directly monkey-patched into the Core or StdLib classes/modules.
 #   Instead they are defined in modules with obvious namespaces, and mixed-in to the
 #   Core or StdLib classes/modules. This provides _much_ easier debugging when there
