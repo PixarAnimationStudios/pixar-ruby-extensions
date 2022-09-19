@@ -1,5 +1,6 @@
 proj_name = 'pixar-ruby-extensions'
-require "./lib/#{proj_name}/version"
+proj_dir = 'pixar_ruby_extensions'
+require "./lib/#{proj_dir}/version"
 
 Gem::Specification.new do |s|
   # General

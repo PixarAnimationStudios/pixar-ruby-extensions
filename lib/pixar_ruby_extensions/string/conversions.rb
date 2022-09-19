@@ -47,8 +47,6 @@ module PixarRubyExtensions
 
       # Convert a string to a Time object
       #
-      # @see Jamf.parse_time
-      #
       # @return [Time] the time represented by the string, or nil
       #
       def pix_to_time

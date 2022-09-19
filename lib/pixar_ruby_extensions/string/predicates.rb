@@ -23,7 +23,7 @@
 #
 #
 
-module JamfRubyExtPixarRubyExtensionsensions
+module PixarRubyExtensions
 
   module String
 
