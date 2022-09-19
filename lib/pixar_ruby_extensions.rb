@@ -40,6 +40,7 @@
 #   methods are defined.
 module PixarRubyExtensions; end
 
+require 'pixar_ruby_extensions/version'
 require 'pixar_ruby_extensions/array'
 require 'pixar_ruby_extensions/filetest'
 require 'pixar_ruby_extensions/hash'
