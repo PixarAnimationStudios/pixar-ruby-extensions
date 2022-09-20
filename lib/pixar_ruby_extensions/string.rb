@@ -1,5 +1,4 @@
 # Copyright 2022 Pixar
-
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -20,6 +19,8 @@
 #    distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 #    KIND, either express or implied. See the Apache License for the specific
 #    language governing permissions and limitations under the Apache License.
+
+# frozen_string_literal: true
 
 require 'pixar_ruby_extensions/string/conversions'
 require 'pixar_ruby_extensions/string/predicates'

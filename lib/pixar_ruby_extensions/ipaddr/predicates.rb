@@ -1,5 +1,4 @@
 # Copyright 2022 Pixar
-
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -21,20 +20,44 @@
 #    KIND, either express or implied. See the Apache License for the specific
 #    language governing permissions and limitations under the Apache License.
 
+# frozen_string_literal: true
+
 module PixarRubyExtensions
 
   module IPAddr
 
     module Predicates
 
-      # handy when you don't know if a value is a String or an IPAddr
-      def start_with?(str)
-        to_s.start_with? str
+      # Handy when you don't know if a value is a String or an IPAddr
+      #
+      # Does not start with pix_ so that you can call it on
+      # either a String or an IPAddr
+      #
+      # Because it doesn't start with pix_ we are only
+      # adding this if it doesn't already exist as an
+      # instance method
+      unless IPAddr.instance_methods.include? :start_with?
+
+        def start_with?(str)
+          to_s.start_with? str
+        end
+
       end
 
-      # handy when you don't know if a value is a String or an IPAddr
-      def end_with?(str)
-        to_s.end_with? str
+      # Handy when you don't know if a value is a String or an IPAddr
+      #
+      # Does not start with pix_ so that you can call it on
+      # either a String or an IPAddr
+      #
+      # Because it doesn't start with pix_ we are only
+      # adding this if it doesn't already exist as an
+      # instance method
+      unless IPAddr.instance_methods.include? :end_with?
+
+        def end_with?(str)
+          to_s.end_with? str
+        end
+
       end
 
     end # module

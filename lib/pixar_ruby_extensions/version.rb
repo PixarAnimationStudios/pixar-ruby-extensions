@@ -1,5 +1,4 @@
 # Copyright 2022 Pixar
-
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -22,6 +21,8 @@
 #    language governing permissions and limitations under the Apache License.
 #
 #
+
+# frozen_string_literal: true
 
 # our version
 module PixarRubyExtensions

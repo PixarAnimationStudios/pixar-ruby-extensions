@@ -22,4 +22,6 @@
 #
 #
 
+# frozen_string_literal: true
+
 require 'pixar_ruby_extensions'

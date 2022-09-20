@@ -19,6 +19,10 @@
 #    distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 #    KIND, either express or implied. See the Apache License for the specific
 #    language governing permissions and limitations under the Apache License.
+#
+#
+
+# frozen_string_literal: true
 
 # These are extensions to Ruby modules and classes in Ruby's Core
 # and Standard Library. We've put them here because we've found
@@ -41,6 +45,8 @@
 module PixarRubyExtensions; end
 
 require 'pixar_ruby_extensions/version'
+
+# NOTE: You may require these individually if you don't need them all.
 
 require 'pixar_ruby_extensions/array'
 require 'pixar_ruby_extensions/filetest'
