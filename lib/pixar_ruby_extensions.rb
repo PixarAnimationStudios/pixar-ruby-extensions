@@ -41,10 +41,13 @@
 module PixarRubyExtensions; end
 
 require 'pixar_ruby_extensions/version'
+
 require 'pixar_ruby_extensions/array'
 require 'pixar_ruby_extensions/filetest'
 require 'pixar_ruby_extensions/hash'
+require 'pixar_ruby_extensions/integer'
 require 'pixar_ruby_extensions/ipaddr'
+require 'pixar_ruby_extensions/json'
 require 'pixar_ruby_extensions/object'
 require 'pixar_ruby_extensions/pathname'
 require 'pixar_ruby_extensions/string'
