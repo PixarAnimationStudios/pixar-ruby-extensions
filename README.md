@@ -12,7 +12,7 @@ To ease troubleshooting and prevent name collisions:
     This provides _much_ easier debugging when there are exceptions, since the error and backtrace will indicate exactly where these methods are defined.
 
 - With only a couple of exceptions, all monkey-patched method names are prefixed with `pix_`
-  - See `PixarRubyExtensions::IPAddr::Predicates` for examples and explanation
+  - See `PixarRubyExtensions::IPAddr::Predicates` for examples and explanation about the exceptions.
 
 ### Usage
 
