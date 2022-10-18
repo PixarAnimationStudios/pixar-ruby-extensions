@@ -70,6 +70,12 @@ module PixarRubyExtensions
         FileUtils.chown usr, grp, @path
       end
 
+      # Pathnames often need to be escaped for the shell
+      def pix_shellescape
+        require 'shellwords'
+        to_s.shellescape
+      end
+
     end # module
 
   end # module
