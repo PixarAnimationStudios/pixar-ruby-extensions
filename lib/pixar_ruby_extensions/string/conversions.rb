@@ -65,6 +65,29 @@ module PixarRubyExtensions
       end
       alias pix_to_path pix_to_pathname
 
+      # Word-wrap a string to a max width.
+      # Regexp found at http://www.java2s.com/Code/Ruby/String/WordwrappingLinesofText.htm
+      #
+      # @param width [Integer] Must be a positive Integer. Defaults to 2 columns less than
+      #   the current terminal width, or 78 if terminal width cannot be obtained.
+      #
+      # @return [String] The string word-wrapped to lines no more than <width> chars long.
+      #
+      def pix_word_wrap(width = nil)
+        if width.nil?
+          begin
+            require 'io/console'
+            width = IO.console.winsize.last - 2
+          rescue
+            width = 78
+          end
+        else
+          width = width.to_i
+          raise ArgumentError, 'Width must be an iteger > 0' unless width.positive?
+        end
+        gsub(/(.{1,#{width}})(\s+|\Z)/, "\\1\n")
+      end
+
     end # module
 
   end # module
