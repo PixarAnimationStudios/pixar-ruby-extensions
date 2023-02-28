@@ -76,6 +76,49 @@ module PixarRubyExtensions
         to_s.shellescape
       end
 
+      # This allows us to write out to a file which many other
+      # threads or processes are reading, and not worry about
+      # them reading a partial file.
+      # It does so by writing into a temp file in the same directory,
+      # then renaming the file into the path `self`
+      #
+      # WARNING: This will overwrite the current file.
+      #
+      # @param data [String] the data to write into the file.
+      #
+      # @return [void]
+      #
+      def pix_atomic_write(data)
+        raise "#{self} is a directory" if directory?
+
+        require 'tempfile'
+        tmpf = Pathname.new Tempfile.create(
+          ['.atomic_write', '.tmp'],
+          parent.to_s
+        )
+
+        if file?
+          ostat = stat
+          mode = ostat.mode
+          uid = ostat.uid
+          gid = ostat.gid
+        else
+          mode = 0o644
+          uid = nil
+          gid = nil
+        end
+
+        tmpf.chmod mode
+        tmpf.chown(uid, gid) if uid && gid
+
+        tmpf.open('w+') { |f| f.write data }
+        tmpf.rename self
+      ensure
+        tmpf.delete if tmpf.file?
+      end # end atomic_write
+      # DEPRECATED: use the pix_ version of this method
+      alias atomic_write pix_atomic_write
+
     end # module
 
   end # module
