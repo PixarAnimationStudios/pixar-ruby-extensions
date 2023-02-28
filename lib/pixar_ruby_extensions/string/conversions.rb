@@ -54,7 +54,7 @@ module PixarRubyExtensions
         # needed to get .parse
         require 'time'
 
-        Time.parse self
+        ::Time.parse self
       rescue
         nil
       end
@@ -64,7 +64,7 @@ module PixarRubyExtensions
       # @return [Pathname]
       #
       def pix_to_pathname
-        Pathname.new self
+        ::Pathname.new self
       end
       alias pix_to_path pix_to_pathname
 
