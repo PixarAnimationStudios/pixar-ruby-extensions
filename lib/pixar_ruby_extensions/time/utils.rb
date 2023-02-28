@@ -33,6 +33,10 @@ module PixarRubyExtensions
         strftime('%L').to_i
       end
 
+      # This is useful for anyone who interacts with the Jamf Pro APIs, which
+      # often deliver timestamps as the unix epoch in milliseconds.
+      # e.g. '2023-02-28 14:43:41.456 -0800' would be 1677624221456
+      #
       # @return [Integer] The Time as a unix epoch with milliseconds appended
       def pix_to_epoch_with_msecs
         msec = strftime('%L').rjust(3, '0')

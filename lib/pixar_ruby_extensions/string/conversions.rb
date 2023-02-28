@@ -46,11 +46,14 @@ module PixarRubyExtensions
         end # case
       end # to bool
 
-      # Convert a string to a Time object
+      # Convert a string to a Time object using Time.parse
       #
       # @return [Time] the time represented by the string, or nil
       #
       def pix_to_time
+        # needed to get .parse
+        require 'time'
+
         Time.parse self
       rescue
         nil
