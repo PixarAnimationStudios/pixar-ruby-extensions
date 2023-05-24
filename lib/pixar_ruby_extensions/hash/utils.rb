@@ -32,6 +32,7 @@ module PixarRubyExtensions
       #
       # This is useful when a dataset lacks consistency as to
       # whether unset values come as nils or empty strings.
+      #
       # By default this method converts all empty strings to nils,
       # but other target strings can be provided.
       #
