@@ -82,6 +82,11 @@ module PixarRubyExtensions
       # It does so by writing into a temp file in the same directory,
       # then renaming the file into the path `self`
       #
+      # NOTE: There is much discussion online about the atomicity of
+      # unix 'rename' but in general as long as you're dealing with
+      # a single file, not a directory, and you are not moving it across
+      # filesystems, then yes, it will be atomic.
+      #
       # WARNING: This will overwrite the current file.
       #
       # @param data [String] the data to write into the file.
@@ -116,6 +121,7 @@ module PixarRubyExtensions
       ensure
         tmpf.delete if tmpf.file?
       end # end atomic_write
+
       # DEPRECATED: use the pix_ version of this method
       alias atomic_write pix_atomic_write
 
