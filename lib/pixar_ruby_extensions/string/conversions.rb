@@ -99,28 +99,28 @@ module PixarRubyExtensions
         gsub(/(.{1,#{width}})(\s+|\Z)/, "\\1\n")
       end
 
-      # URL escape a string to be used when building URL.
+      # Encode this string to be used when building a URL.
       #
       # DO NOT use this to encode an entire URL, or any part of a URL that has
       # characters that shouldn't be encoded - as it will encode the slashes and other
       # proper URL parts, e.g.
       #
       #    url = 'http://foobar.com/foo?bar=this has spaces'.pix_url_encode
-      #    # => "http%3A%2F%2Ffoobar.com%2Ffoo%3Fbar%3Dthis+has+spaces"
+      #    # => "http%3A%2F%2Ffoobar.com%2Ffoo%3Fbar%3Dthis%20has%20spaces"
       #
       # Instead just convert any appropriate sub-part of the URL
       #
       #   endoded_value = 'this has spaces'.pix_url_encode
       #   url = "http://foobar.com/foo?bar=#{endoded_value}"
-      #   # => "http://foobar.com/foo?bar=this+has+spaces"
+      #   # => "http://foobar.com/foo?bar=this%20has%20spaces"
       #
-      # This uses CGI.escape, which converts spaces to '+'.
-      # Consult the interwebs for the differences between '+' and '%20', and
-      # CGI.escape vs  ERB::Util.url_encode
+      # This uses ERB::Util.url_encode, which converts spaces to '%20'.
+      # Consult the interwebs for the differences between '%20' and '+', and
+      # ERB::Util.url_encode vs CGI.escape
       #
       def pix_url_encode
-        require 'cgi'
-        CGI.escape self
+        require 'erb'
+        ERB::Util.url_encode self
       end
 
     end # module
