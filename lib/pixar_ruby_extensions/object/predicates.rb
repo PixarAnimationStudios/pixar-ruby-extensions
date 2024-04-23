@@ -39,6 +39,24 @@ module PixarRubyExtensions
       end
       alias pix_bool? pix_boolean?
 
+      # Is an object nil, or empty?
+      # Handier, and broader,
+      # than constantly doing
+      # var.to_s.empty?
+      # and doesn't require coercion
+      #
+      # @return [Boolean]
+      #
+      def pix_blank?
+        if nil?
+          true
+        elsif respond_to?(:empty?)
+          empty?
+        else
+          false
+        end
+      end
+
     end # module
 
   end # module
