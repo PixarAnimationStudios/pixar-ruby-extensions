@@ -125,6 +125,24 @@ module PixarRubyExtensions
       # DEPRECATED: use the pix_ version of this method
       alias atomic_write pix_atomic_write
 
+      # @see PixarRubyExtensions::IntegerExtensions::Utils#pix_humanize_bytes
+      #
+      # @return [String] The human-readable file size.
+      #
+      def pix_humanize_size
+        size.pix_humanize_bytes
+      end
+
+      # The same as #pix_humanize_size except returns nil if
+      # the file size is zero, or the file doesn't exist.
+      #
+      def pix_humanize_size?(show_unit: false)
+        return unless exist?
+        return if size.zero?
+
+        humanize_size
+      end
+
     end # module
 
   end # module

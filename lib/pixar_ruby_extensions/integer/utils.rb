@@ -133,6 +133,64 @@ module PixarRubyExtensions
         output_array.compact.reverse.join ' '
       end
 
+      B_BYTES = 1.0
+      KB_BYTES = B_BYTES * 1024
+      MB_BYTES = KB_BYTES * 1024
+      GB_BYTES = MB_BYTES * 1024
+      TB_BYTES = GB_BYTES * 1024
+      PB_BYTES = TB_BYTES * 1024
+
+      HUMANIZED_BYTE_UNITS = {
+        A_BYTE => 'byte',
+        B_BYTES => 'bytes',
+        KB_BYTES => 'KiB',
+        MB_BYTES => 'MiB',
+        GB_BYTES => 'GiB',
+        TB_BYTES => 'TiB',
+        PB_BYTES => 'PiB'
+      }.freeze
+
+      # A number of bytes converted into a string showing
+      # KibiBytes, Mebibytes, etc up to Pebibytes, with 2
+      # decimal places of precision.
+      #
+      # Returns a string with the unit in the form 'MiB'
+      #
+      # For 76253886 bytes this will return "72.72 MiB"
+      #
+      # @return [String] The human-readable file size.
+      #######
+      def pix_humanize_bytes
+        bytes = self
+        if bytes < KB_BYTES
+          hsize = bytes
+          unit =  bytes == 1 ? HUMANIZED_BYTE_UNITS[A_BYTE] : HUMANIZED_BYTE_UNITS[B_BYTES]
+
+        elsif bytes < MB_BYTES
+          hsize = (bytes / KB_BYTES).round(2)
+          unit = HUMANIZED_BYTE_UNITS[KB_BYTES]
+
+        elsif bytes < GB_BYTES
+          hsize = (bytes / MB_BYTES).round(2)
+          unit = HUMANIZED_BYTE_UNITS[MB_BYTES]
+
+        elsif bytes < TB_BYTES
+          hsize = (bytes / GB_BYTES).round(2)
+          unit = HUMANIZED_BYTE_UNITS[GB_BYTES]
+
+        elsif bytes < PB_BYTES
+          hsize = (bytes / TB_BYTES).round(2)
+          unit = HUMANIZED_BYTE_UNITS[TB_BYTES]
+
+        else
+          hsize = (bytes / PB_BYTES).round(2)
+          unit =  HUMANIZED_BYTE_UNITS[PB_BYTES]
+
+        end
+
+        "#{hsize} #{unit}"
+      end
+
     end # module
 
   end # module
