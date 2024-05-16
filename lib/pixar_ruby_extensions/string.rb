@@ -28,7 +28,7 @@ require 'pixar_ruby_extensions/string/predicates'
 # include the modules loaded above
 class String
 
-  include PixarRubyExtensions::String::Predicates
-  include PixarRubyExtensions::String::Conversions
+  include PixarRubyExtensions::StringExtensions::Predicates
+  include PixarRubyExtensions::StringExtensions::Conversions
 
 end

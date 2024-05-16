@@ -29,7 +29,7 @@ require 'pixar_ruby_extensions/pathname/predicates'
 # include the modules loaded above
 class Pathname
 
-  include PixarRubyExtensions::Pathname::Predicates
-  include PixarRubyExtensions::Pathname::Utils
+  include PixarRubyExtensions::PathnameExtensions::Predicates
+  include PixarRubyExtensions::PathnameExtensions::Utils
 
 end

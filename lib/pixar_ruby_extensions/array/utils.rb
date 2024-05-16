@@ -24,7 +24,7 @@
 
 module PixarRubyExtensions
 
-  module Array
+  module ArrayExtensions
 
     # Useful monkey patches for Array
     module Utils

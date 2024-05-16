@@ -26,6 +26,6 @@ require 'pixar_ruby_extensions/filetest/predicates'
 
 module FileTest
 
-  extend PixarRubyExtensions::FileTest::Predicates
+  extend PixarRubyExtensions::FileTestExtensions::Predicates
 
 end # module FileTest

@@ -24,7 +24,7 @@
 
 module PixarRubyExtensions
 
-  module Array
+  module ArrayExtensions
 
     module Predicates
 

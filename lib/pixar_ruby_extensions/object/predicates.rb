@@ -24,7 +24,7 @@
 
 module PixarRubyExtensions
 
-  module Object
+  module ObjectExtensions
 
     module Predicates
 

@@ -26,6 +26,6 @@ require 'pixar_ruby_extensions/integer/utils'
 
 class Integer
 
-  include PixarRubyExtensions::Integer::Utils
+  include PixarRubyExtensions::IntegerExtensions::Utils
 
 end

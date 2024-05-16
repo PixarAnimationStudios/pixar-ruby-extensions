@@ -24,7 +24,7 @@
 
 module PixarRubyExtensions
 
-  module Time
+  module TimeExtensions
 
     module Utils
 

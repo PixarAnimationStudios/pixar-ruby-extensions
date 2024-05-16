@@ -24,7 +24,7 @@
 
 module PixarRubyExtensions
 
-  module Pathname
+  module PathnameExtensions
 
     module Predicates
 

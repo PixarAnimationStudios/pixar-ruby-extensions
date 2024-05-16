@@ -24,7 +24,7 @@
 
 module PixarRubyExtensions
 
-  module Pathname
+  module PathnameExtensions
 
     module Utils
 
@@ -119,7 +119,7 @@ module PixarRubyExtensions
         tmpf.open('w+') { |f| f.write data }
         tmpf.rename self
       ensure
-        tmpf.delete if tmpf.file?
+        tmpf.delete if tmpf && tmpf.file?
       end # end atomic_write
 
       # DEPRECATED: use the pix_ version of this method

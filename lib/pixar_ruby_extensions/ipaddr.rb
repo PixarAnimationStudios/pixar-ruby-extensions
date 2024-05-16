@@ -31,7 +31,7 @@ require 'pixar_ruby_extensions/ipaddr/predicates'
 #
 class IPAddr
 
-  extend PixarRubyExtensions::IPAddr::Utils
-  include PixarRubyExtensions::IPAddr::Predicates
+  extend PixarRubyExtensions::IPAddrExtensions::Utils
+  include PixarRubyExtensions::IPAddrExtensions::Predicates
 
 end # Class IPAddr

@@ -24,7 +24,7 @@
 
 module PixarRubyExtensions
 
-  module Hash
+  module HashExtensions
 
     module Utils
 
@@ -93,9 +93,9 @@ module PixarRubyExtensions
 
         send transformer do |v|
           if v.is_a?(Hash) && recurse
-            puts :recursing
+            # puts :recursing
             v = v.send(nillifier, to_nils, recurse: recurse, &block)
-            puts "new v is: #{v}"
+            # puts "new v is: #{v}"
             v
           else
             do_it = block_given? ? yield(v) : nillify_these.include?(v)

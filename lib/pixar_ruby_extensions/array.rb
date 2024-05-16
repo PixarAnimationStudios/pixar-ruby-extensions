@@ -28,7 +28,7 @@ require 'pixar_ruby_extensions/array/utils'
 # an array
 class Array
 
-  include PixarRubyExtensions::Array::Predicates
-  include PixarRubyExtensions::Array::Utils
+  include PixarRubyExtensions::ArrayExtensions::Predicates
+  include PixarRubyExtensions::ArrayExtensions::Utils
 
 end # class

@@ -24,7 +24,7 @@
 
 module PixarRubyExtensions
 
-  module Integer
+  module IntegerExtensions
 
     module Utils
 

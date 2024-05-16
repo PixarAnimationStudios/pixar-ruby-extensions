@@ -24,7 +24,7 @@
 
 module PixarRubyExtensions
 
-  module IPAddr
+  module IPAddrExtensions
 
     module Predicates
 

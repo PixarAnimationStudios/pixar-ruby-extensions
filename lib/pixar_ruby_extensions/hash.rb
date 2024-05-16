@@ -27,6 +27,6 @@ require 'pixar_ruby_extensions/hash/utils'
 # include the modules loaded above
 class Hash
 
-  include PixarRubyExtensions::Hash::Utils
+  include PixarRubyExtensions::HashExtensions::Utils
 
 end

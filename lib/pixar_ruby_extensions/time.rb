@@ -28,6 +28,6 @@ require 'pixar_ruby_extensions/time/utils'
 # include the modules loaded above
 class Time
 
-  include PixarRubyExtensions::Time::Utils
+  include PixarRubyExtensions::TimeExtensions::Utils
 
 end

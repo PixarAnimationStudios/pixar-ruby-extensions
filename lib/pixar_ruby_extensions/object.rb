@@ -27,6 +27,6 @@ require 'pixar_ruby_extensions/object/predicates'
 # include the modules loaded above
 class Object
 
-  include PixarRubyExtensions::Object::Predicates
+  include PixarRubyExtensions::ObjectExtensions::Predicates
 
 end

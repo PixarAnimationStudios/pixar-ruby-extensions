@@ -24,7 +24,7 @@
 
 module PixarRubyExtensions
 
-  module String
+  module StringExtensions
 
     module Conversions
 

@@ -24,7 +24,7 @@
 
 module PixarRubyExtensions
 
-  module FileTest
+  module FileTestExtensions
 
     module Predicates
 
