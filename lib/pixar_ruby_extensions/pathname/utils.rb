@@ -136,6 +136,7 @@ module PixarRubyExtensions
       # The same as #pix_humanize_size except returns nil if
       # the file size is zero, or the file doesn't exist.
       #
+      # @return [String, nil] The human-readable file size, or nil
       def pix_humanize_size?(show_unit: false)
         return unless exist?
         return if size.zero?
