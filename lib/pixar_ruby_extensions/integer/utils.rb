@@ -133,6 +133,7 @@ module PixarRubyExtensions
         output_array.compact.reverse.join ' '
       end
 
+      A_BYTE = 1
       B_BYTES = 1.0
       KB_BYTES = B_BYTES * 1024
       MB_BYTES = KB_BYTES * 1024
@@ -164,7 +165,7 @@ module PixarRubyExtensions
         bytes = self
         if bytes < KB_BYTES
           hsize = bytes
-          unit =  bytes == 1 ? HUMANIZED_BYTE_UNITS[A_BYTE] : HUMANIZED_BYTE_UNITS[B_BYTES]
+          unit =  bytes == A_BYTE ? HUMANIZED_BYTE_UNITS[A_BYTE] : HUMANIZED_BYTE_UNITS[B_BYTES]
 
         elsif bytes < MB_BYTES
           hsize = (bytes / KB_BYTES).round(2)
