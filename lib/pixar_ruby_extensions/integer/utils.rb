@@ -156,7 +156,7 @@ module PixarRubyExtensions
       # decimal places of precision.
       #
       # Returns a string with the unit in the form 'MiB'
-      #
+      # unless < 1KiB, in which case 'byte(s)'
       # For 76253886 bytes this will return "72.72 MiB"
       #
       # @return [String] The human-readable file size.

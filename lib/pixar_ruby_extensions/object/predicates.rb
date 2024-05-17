@@ -40,6 +40,7 @@ module PixarRubyExtensions
       alias pix_bool? pix_boolean?
 
       # Is an object nil, or empty?
+      #
       # Handier, and broader,
       # than constantly doing
       # var.to_s.empty?

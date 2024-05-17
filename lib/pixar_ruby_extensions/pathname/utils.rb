@@ -130,6 +130,9 @@ module PixarRubyExtensions
       # @return [String] The human-readable file size.
       #
       def pix_humanize_size
+        # make sure we require this, in case the user only required
+        # 'pixar_ruby_extensions/pathname'
+        require 'pixar_ruby_extensions/integer'
         size.pix_humanize_bytes
       end
 
