@@ -31,7 +31,7 @@ module PixarRubyExtensions
 
       # Fetch a string from an Array case-insensitively,
       # e.g. if my_array contains 'thrasher',
-      #    my_array.j_ci_fetch('ThRashEr')
+      #    my_array.pix_ci_fetch('ThRashEr')
       # will return 'thrasher'
       #
       # It only considers elements that are Strings
