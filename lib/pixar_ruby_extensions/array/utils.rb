@@ -66,7 +66,6 @@ module PixarRubyExtensions
       #
       # The [l|r]just method names mirror those in String
       # The aliases are a little more Englishy
-
       def pix_rjust!(to_len, val)
         insert(0, *Array.new([0, to_len - length].max, val))
       end

@@ -38,6 +38,16 @@ module PixarRubyExtensions
         FileTest.file?(path) && !FileTest.symlink?(path)
       end # real_file?
 
+      # FileTest.directory? returns true if
+      # the item is a symlink pointing to a directory.
+      #
+      # This test, real_directory?, returns true if the item is
+      # a directory but NOT a symlink.
+      #
+      def pix_real_directory?(path)
+        FileTest.directory?(path) && !FileTest.symlink?(path)
+      end # real_file?
+
     end # module
 
   end # module
