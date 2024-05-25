@@ -41,14 +41,12 @@ module PixarRubyExtensions
 
       # Is an object nil, or empty?
       #
-      # Handier, and broader,
-      # than constantly doing
-      # var.to_s.empty?
-      # and doesn't require coercion
+      # Handier, and broader, than constantly doing
+      # var.to_s.empty? and doesn't require coercion
       #
       # @return [Boolean]
       #
-      def pix_blank?
+      def pix_empty?
         if nil?
           true
         elsif respond_to?(:empty?)
@@ -57,6 +55,9 @@ module PixarRubyExtensions
           false
         end
       end
+
+      # pix_empty? was originally pix_blank?
+      alias pix_blank? pix_empty?
 
     end # module
 
