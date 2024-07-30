@@ -84,6 +84,7 @@ module PixarRubyExtensions
       def pix_ljust(to_len, val)
         dup.fill(val, length...to_len)
       end
+      alias pix_padright pix_ljust
 
     end # module
 
