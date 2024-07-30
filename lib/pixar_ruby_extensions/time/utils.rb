@@ -53,7 +53,7 @@ module PixarRubyExtensions
       # @return [String] the Time formatted as iso8601 with the
       #   milliseconds
       def pix_to_iso8601_with_msecs
-        strftime("%FT%T.#{p_msec}%z")
+        strftime("%FT%T.#{pix_msec}%z")
       end
 
     end
