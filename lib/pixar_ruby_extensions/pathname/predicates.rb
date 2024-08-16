@@ -29,10 +29,16 @@ module PixarRubyExtensions
     module Predicates
 
       # Is this a real file rather than a symlink?
-      # @see FileTest.real_file
+      # @see FileTest.pix_real_file?
       def pix_real_file?
-        FileTest.real_file? self
-      end # real_file?
+        FileTest.pix_real_file? self
+      end
+
+      # Is this a real directory rather than a symlink?
+      # @see FileTest.pix_real_directory?
+      def pix_real_directory?
+        FileTest.pix_real_directory? self
+      end
 
       # does a path include another?
       # i.e. is 'other' a descendant of self ?
