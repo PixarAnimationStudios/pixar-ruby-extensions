@@ -52,6 +52,16 @@ module PixarRubyExtensions
         self =~ FLOAT_RE ? true : false
       end
 
+      # is this some representation of a number?
+      #
+      # @return [Boolean]
+      #
+      def pix_numeric?
+        true if Float(self)
+      rescue
+        false
+      end
+
     end # module
 
   end # module
