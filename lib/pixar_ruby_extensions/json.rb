@@ -24,6 +24,7 @@
 
 require 'json'
 require 'pixar_ruby_extensions/json/utils'
+require 'pixar_ruby_extensions/json/jsonl'
 
 module JSON
 
