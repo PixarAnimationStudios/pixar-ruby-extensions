@@ -86,6 +86,18 @@ module PixarRubyExtensions
       end
       alias pix_padright pix_ljust
 
+      # Array#pix_to_jsonl
+      #
+      # Convert an Array of objects to a jsonlines string
+      #
+      # @param opts [Hash] Options to pass to JSON.dump
+      #
+      # @return [String] The jsonlines string
+      #
+      def pix_to_jsonl(**opts)
+        map { |obj| JSON.generate(obj, **opts) }.join("\n")
+      end
+
     end # module
 
   end # module

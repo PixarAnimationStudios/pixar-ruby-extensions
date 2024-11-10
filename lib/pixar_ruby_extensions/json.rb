@@ -28,5 +28,6 @@ require 'pixar_ruby_extensions/json/utils'
 module JSON
 
   extend PixarRubyExtensions::JSONExtensions::Utils
+  extend PixarRubyExtensions::JSONExtensions::JSONL
 
 end
