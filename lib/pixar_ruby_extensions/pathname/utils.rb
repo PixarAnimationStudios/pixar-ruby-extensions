@@ -114,7 +114,7 @@ module PixarRubyExtensions
         end
 
         tmpf.chmod mode
-        tmpf.chown(uid, gid) if uid && gid
+        tmpf.pix_chown(uid, gid) if uid && gid
 
         tmpf.open('w+') { |f| f.write data }
         tmpf.rename self
