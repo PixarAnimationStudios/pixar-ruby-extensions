@@ -33,8 +33,7 @@ module PixarRubyExtensions
     #
     module JSONL
 
-      # Read a jsonlines file and return an array of objects.
-      # , with the addition of
+      # Read a jsonlines file and return an array of objects, with the addition of
       # ignoring comment lines, as with JSONExtensions::Utils#pix_parse
       #
       # @param source [String] the string of JSON to be parsed
