@@ -130,7 +130,7 @@ module PixarRubyExtensions
 
           next if omit_zeros && display_current_unit_count.zero?
 
-          display_name = display_current_unit_count <= 1 ? singular : current_unit
+          display_name = display_current_unit_count == 1 ? singular : current_unit
 
           "#{display_current_unit_count} #{display_name}"
         end # map
