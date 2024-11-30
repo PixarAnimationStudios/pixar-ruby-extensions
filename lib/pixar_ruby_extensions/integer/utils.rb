@@ -95,7 +95,7 @@ module PixarRubyExtensions
       #
       # @return [String] The integer number of seconds, expressed in descending English time units
       #
-      def pix_humanize_secs(omit_zeros: false, down_to: :seconds, up_to: :years)
+      def pix_humanize_secs(omit_zeros: false, down_to: :seconds, up_to: :years, fraction: nil)
         # initialize values for our loop
         remaining_next_unit = self
         down_to_this_unit = false
@@ -125,7 +125,12 @@ module PixarRubyExtensions
           next unless down_to_this_unit
 
           display_current_unit_count = current_unit_count.to_i
-          display_name = display_current_unit_count == 1 ? singular : current_unit
+          # if we are processing 'seconds' and there is a fraction, append it to the seconds
+          display_current_unit_count += "0.#{fraction}".to_f if current_unit == :seconds && fraction
+
+          next if omit_zeros && display_current_unit_count.zero?
+
+          display_name = display_current_unit_count <= 1 ? singular : current_unit
 
           "#{display_current_unit_count} #{display_name}"
         end # map
