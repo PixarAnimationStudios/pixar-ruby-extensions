@@ -10,6 +10,6 @@
 # our version
 module PixarRubyExtensions
 
-  VERSION = '1.11.0'
+  VERSION = '1.11.1'
 
 end
