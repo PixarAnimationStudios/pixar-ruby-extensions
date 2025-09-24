@@ -22,7 +22,7 @@ To load only one: `require 'pixar_ruby_extensions/integer'`
 
 ### Credits
 
-- The modularization idea came to me from [this page about responsible monkey-patching](https://www.justinweiss.com/articles/3-ways-to-monkey-patch-without-making-a-mess/), many thanks to the author and the discussion thread.
+- The modularization idea came from [this page about responsible monkey-patching](https://www.justinweiss.com/articles/3-ways-to-monkey-patch-without-making-a-mess/), many thanks to the author and the discussion thread.
 
 ### ToDo
 

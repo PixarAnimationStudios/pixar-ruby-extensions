@@ -11,6 +11,8 @@ module PixarRubyExtensions
 
     module Utils
 
+      require 'fileutils'
+
       # Copy a path to a destination
       # @see FileUtils.cp
       def pix_cp(dest, **options)
