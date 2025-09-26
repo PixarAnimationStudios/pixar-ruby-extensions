@@ -2,7 +2,7 @@
 
 This gem defines extensions to modules and classes in Ruby's Core and Standard Library. We've put them here because we've found ourselves performing these tasks repeatedly in our code over the years and we like to stay DRY.
 
-They are also used embedded in our open-source projects, and their use there will be migrating to use this gem - also in pursuit of DRYness.
+They are also used in our open-source projects, and those will be migrating to use this gem - also in pursuit of DRYness.
 
 To ease troubleshooting and prevent name collisions:
 
