@@ -24,10 +24,10 @@ module PixarRubyExtensions
       # @return [Boolean]
       #
       def pix_integer?
-        self =~ INTEGER_RE ? true : false
+        INTEGER_RE.match? self
       end
 
-      # Does this string contain a float?
+      # Does this string contain a simple float?
       # (i.e. it consists only of numeric digits,
       #  maybe with a dash in front followed by one
       #  dot, followed by at least one more digit)
@@ -35,7 +35,7 @@ module PixarRubyExtensions
       # @return [Boolean]
       #
       def pix_float?
-        self =~ FLOAT_RE ? true : false
+        FLOAT_RE.match? self
       end
 
       # is this some representation of a number?
