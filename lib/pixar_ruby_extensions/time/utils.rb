@@ -39,8 +39,20 @@ module PixarRubyExtensions
         strftime("%FT%T.#{pix_msec}%z")
       end
 
-    end
+      # @param full_dayname [Boolean] The day name is the full version (strftime %A)
+      #   instead of the default 3-letter short version (strftime %a)
+      # @return [String] The English ordinal weekday of the month:
+      #   Time.now.ordinal_weekday   => "2nd Wed"
+      #
+      def pix_ordinal_weekday(full_dayname: false)
+        require 'pixar_ruby_extensions/integer'
+        weeknum = (((day - 1) / 7) + 1)
+        dayname_format = full_dayname ? '%A' : '%a'
+        "#{weeknum.pix_ordinalize} #{strftime dayname_format}"
+      end
 
-  end
+    end # Module Utils
 
-end
+  end # Module
+
+end # Module

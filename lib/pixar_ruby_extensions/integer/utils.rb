@@ -180,6 +180,24 @@ module PixarRubyExtensions
         "#{hsize} #{unit}"
       end
 
+      # Taken from Rails...
+      #
+      # @return [String] The English ordinal version of the integer, e.g. 1 => '1st', 225 => '225th'
+      #############
+      def pix_ordinalize
+        # Handle 11th, 12th, 13th, etc.
+        if (11..13).include?(abs % 100)
+          "#{self}th"
+        else
+          case abs % 10
+          when 1 then "#{self}st"
+          when 2 then "#{self}nd"
+          when 3 then "#{self}rd"
+          else        "#{self}th"
+          end
+        end
+      end
+
     end # module
 
   end # module
